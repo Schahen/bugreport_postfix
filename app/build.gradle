@@ -1,0 +1,11 @@
+plugins {
+  id("kotlin2js")
+  id("kotlin-dce-js")
+}
+
+
+tasks.getByName("build").dependsOn(runDceKotlinJs)
+
+dependencies {
+  implementation(project(":someClass"))
+}
